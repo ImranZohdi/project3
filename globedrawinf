@@ -1,0 +1,37 @@
+import turtle
+
+def draw_globe():
+    screen = turtle.Screen()
+    screen.bgcolor("black")
+
+    globe = turtle.Turtle()
+    globe.speed(2)
+    globe.color("blue")
+
+    # Draw the globe
+    globe.penup()
+    globe.goto(0, -200)
+    globe.pendown()
+    globe.begin_fill()
+    globe.circle(200)
+    globe.end_fill()
+
+    # Draw continents
+    draw_continent(globe, "green", 30, 40)
+    draw_continent(globe, "green", -20, 20)
+    draw_continent(globe, "green", -30, -30)
+    draw_continent(globe, "green", 20, -40)
+
+    turtle.done()
+
+def draw_continent(turtle, color, x, y):
+    turtle.penup()
+    turtle.goto(x, y)
+    turtle.pendown()
+    turtle.color(color)
+    turtle.begin_fill()
+    turtle.circle(50)
+    turtle.end_fill()
+
+if __name__ == "__main__":
+    draw_globe()
